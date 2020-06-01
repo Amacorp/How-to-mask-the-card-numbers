@@ -1,0 +1,29 @@
+For mask the last 4 digits we can use this codes:
+
+
+def maskify(cc):
+    return "#"*(len(cc)-4) + cc[-4:]
+    
+    
+    
+OR
+
+
+def maskify(cc):
+    l = len(cc)
+    if l <= 4: return cc
+    return (l - 4) * '#' + cc[-4:]
+    
+    
+OR
+
+def maskify(cc):
+    width = len(cc)
+    return cc[-4:].rjust(width, '#')
+    
+    
+    
+OR for other numbers
+
+print card[:6] + 'X' * 6 + card[-4:]
+'455694XXXXXX6539'
